@@ -1,0 +1,51 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.min.frame'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.min.frame"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    implementation project(":common")
+
+    //SmartRefreshLayout
+    implementation 'io.github.scwang90:refresh-layout-kernel:2.0.5' //核心必须依赖
+    implementation 'io.github.scwang90:refresh-header-classics:2.0.5' //经典刷新头
+    implementation 'io.github.scwang90:refresh-header-two-level:2.0.5' //二级刷新头
+    implementation 'io.github.scwang90:refresh-footer-classics:2.0.5' //经典加载
+    //BaseRecyclerViewAdapter
+    implementation "io.github.cymchad:BaseRecyclerViewAdapterHelper:4.0.0-beta02"
+    //navigation
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.4.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.4.1'
+}

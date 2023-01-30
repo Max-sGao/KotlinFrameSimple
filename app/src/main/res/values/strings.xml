@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">KotlinFrameApp</string>
+    <string name="bnv1">首页</string>
+    <string name="bnv2">问答</string>
+    <string name="bnv3">体系</string>
+    <string name="bnv4">我的</string>
+</resources>
